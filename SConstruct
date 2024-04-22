@@ -6,6 +6,7 @@ target_path = ARGUMENTS.pop("target_path", "demo/addons/godot-sqlite/bin/")
 target_name = ARGUMENTS.pop("target_name", "libgdsqlite")
 
 env = SConscript("godot-cpp/SConstruct")
+env.Append(CPPDEFINES=['SQLITE_ENABLE_FTS5']) 
 
 target = "{}{}".format(
     target_path, target_name
